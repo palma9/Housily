@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.property.filter.PropertyFilterActivity"
+    tools:showIn="@layout/activity_property_filter">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Category"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp   "
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_category"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_category">
+
+            <TextView
+                style="@style/InputLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories" />
+
+            <Spinner
+                android:id="@+id/spinner_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_category"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_min_price_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/space"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_price"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_price">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_min_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Min price" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_max_price_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/input_min_price_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/space"
+            app:layout_constraintTop_toTopOf="@+id/input_min_price_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_max_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Max price" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_title_meters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Meters"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_price"
+            app:layout_constraintTop_toBottomOf="@+id/input_min_price_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_min_met_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/space"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_meters"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_meters">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_min_met"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Min meters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_max_met_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/input_min_met_layout"
+            app:layout_constraintEnd_toEndOf="@+id/input_max_price_layout"
+            app:layout_constraintStart_toEndOf="@+id/space"
+            app:layout_constraintTop_toTopOf="@+id/input_min_met_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_max_met"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Max meters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_title_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Location"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_meters"
+            app:layout_constraintTop_toBottomOf="@+id/input_min_met_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_province_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/input_max_met_layout"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_location">
+
+            <com.salesianos.housify.util.TextInputAutoCompleteTextView
+                android:id="@+id/input_province"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Province" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_city_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/input_province_layout"
+            app:layout_constraintStart_toStartOf="@+id/input_province_layout"
+            app:layout_constraintTop_toBottomOf="@+id/input_province_layout">
+
+            <com.salesianos.housify.util.TextInputAutoCompleteTextView
+                android:id="@+id/input_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="City" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_zipcode_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/input_city_layout"
+            app:layout_constraintStart_toStartOf="@+id/input_city_layout"
+            app:layout_constraintTop_toBottomOf="@+id/input_city_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_zipcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zipcode" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_title_rooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Rooms"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_location"
+            app:layout_constraintTop_toBottomOf="@+id/input_zipcode_layout" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/input_zipcode_layout"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_rooms"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_rooms">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1"
+                    app:layout_constraintStart_toStartOf="@+id/tv_title_rooms"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title_rooms" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkbox_rooms_one"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_one"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_rooms_one" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkbox_rooms_two"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_two"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_rooms_two" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkbox_rooms_three"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_three"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_rooms_three" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkbox_rooms_four"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_four"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_rooms_four" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="6"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkbox_rooms_five"
+                    app:layout_constraintEnd_toEndOf="@+id/checkbox_rooms_twelve"
+                    app:layout_constraintStart_toStartOf="@+id/checkbox_rooms_twelve"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_rooms_five" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="7"
+                    app:layout_constraintEnd_toEndOf="@+id/checkbox_rooms_one"
+                    app:layout_constraintStart_toStartOf="@+id/checkbox_rooms_one"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_rooms_one" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_eight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="8"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_seven"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_rooms_two" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_nine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="9"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_eight"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_rooms_three" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_ten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="10"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_nine"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_rooms_four" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_eleven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="11"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_rooms_ten"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_rooms_five" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_rooms_twelve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_rooms_six" />
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_set_filter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Filter"
+            app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_filter"
+        android:icon="@drawable/ic_filter_list_white_24dp"
+        android:orderInCategory="100"
+        android:title="@string/action_filter"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/ic_sort_white_24dp"
+        android:title="@string/sort"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_sort_newest"
+                android:title="Newest" />
+            <item
+                android:id="@+id/action_sort_name"
+                android:title="Name" />
+            <item
+                android:id="@+id/action_sort_price"
+                android:title="Price" />
+            <item
+                android:id="@+id/action_sort_rooms"
+                android:title="Rooms" />
+            <item
+                android:id="@+id/action_sort_size"
+                android:title="Size" />
+        </menu>
+    </item>
+</menu>
