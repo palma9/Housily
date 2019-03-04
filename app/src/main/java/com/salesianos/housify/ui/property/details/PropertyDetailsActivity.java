@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -31,7 +30,6 @@ import com.salesianos.housify.retrofit.Service.PropertyService;
 import com.salesianos.housify.retrofit.generator.AuthType;
 import com.salesianos.housify.retrofit.generator.ServiceGenerator;
 import com.salesianos.housify.ui.property.edit.PropertyEditActivity;
-import com.salesianos.housify.ui.property.map.PropertyMapsActivity;
 import com.salesianos.housify.util.UtilToken;
 import com.smarteist.autoimageslider.DefaultSliderView;
 import com.smarteist.autoimageslider.SliderLayout;
@@ -131,6 +129,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
             if (p.ownerId.getId().equals(UtilToken.getId(this)))
                 fab_my_property_options.setVisibility(View.VISIBLE);
         fab_details_add_image.setOnClickListener(v -> performFileSearch());
+        fab_details_delete_property.setOnClickListener(v -> dialogDelete());
         fab_details_edit_property.setOnClickListener(v ->
                 startActivityForResult(new Intent(this, PropertyEditActivity.class)
                         .putExtra("property", p), EDIT_REQUEST_CODE));
